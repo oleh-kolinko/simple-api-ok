@@ -7,8 +7,8 @@ const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 
-
-mongoose.connect('mongodb://localhost/simple-api-ok');
+const MONGODB_URI = require('./MONGODB_URI')
+mongoose.connect(MONGODB_URI);
 
 const app = express();
 
