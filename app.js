@@ -7,8 +7,10 @@ const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 
-const MONGODB_URI = require('./MONGODB_URI')
-mongoose.connect(MONGODB_URI);
+const dotenv = require('dotenv');
+dotenv.config();
+
+mongoose.connect(process.env.MONGODB_URI);
 
 const app = express();
 
