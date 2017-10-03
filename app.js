@@ -6,13 +6,14 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
-
-const dotenv = require('dotenv');
+const cors         = require('cors');
+const dotenv       = require('dotenv');
 dotenv.config();
 
 mongoose.connect(process.env.MONGODB_URI);
 
 const app = express();
+app.use(cors());//enable cors to all requests
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
